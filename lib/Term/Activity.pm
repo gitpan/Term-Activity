@@ -78,6 +78,32 @@ different ones:
      chars => [ '-', '=', '%', '=', '-' ]
   });
 
+=head2 Start Time:
+
+The start time for the process timer is initialized when the 
+Term::Activity is created. Sometimes, with longer programs you want the 
+count to remain constant through several different forms of processing. 
+You can set the start time to a previous start time to do this.
+
+The parameter is called 'time' in the initilization hash:
+
+  my $start_time = time;
+
+  # Stuff happens
+
+  my $ta = new Term::Activity ({ 
+     time => $start_time
+  });
+
+=head2 Debug:
+
+By setting the debug parameter to 1 a very verbose debug output is 
+produced along with the regular output to let you see settings have been 
+selected and what computations are being performed.
+
+  my $ta = new Term::Activity ({ 
+     debug => 1
+  });
 
 =head2 Multiple Instances:
 
@@ -113,7 +139,7 @@ way, it is not informative. Remember to keep your label strings short.
 
 =head1 AUTHORSHIP:
 
-    Term::Activity v1.05 2004/04/02
+    Term::Activity v1.06 2004/09/10
 
     (c) 2003-2004, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
@@ -122,6 +148,8 @@ way, it is not informative. Remember to keep your label strings short.
 
     Derived from Util::Status 1.12 2003/09/08
     With permission granted from Health Market Science, Inc.
+
+    Internal Crescendo RCS tag: $Revision: 1.9 $
 
 =head1 SEE ALSO:
 
@@ -137,37 +165,28 @@ use 5.6.0;
 use strict;
 use warnings;
 
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 sub new {
-  my $class = shift @_;
+  my $class = $_[0];
   my $self  = {};
   bless($self,$class);
-
-  ## basic settings
-
-  our $width = $self->_width_init; # Terminal width
-
-  our $start    = time;            # starting time
-  our $last     = $start;          # last update time
-
-  our $count    = 0;               # full count
-  our $interval = 100;             # how often to update the terminal
-
-  our $marker = 0; # starting position
-  our $skip   = $width - 19;                     # The area for the chars
-  our $ants   = [ map { ' '; } ( 1 .. $skip ) ]; # characters to display
 
   ## configurables
 
   our $chars   = undef;
-  our $name    = ''; # optional label name
+  our $debug   = 0;     # debug output
+  our $name    = '';    # optional label name
+  our $start   = time;  # starting time
+
   my $raw_skin = 'wave';
 
   if ( UNIVERSAL::isa($_[1],'HASH') ) {
 
-    $chars    = $_[1]->{chars} if defined $_[1]->{chars};  
+    $chars    = $_[1]->{chars} if defined $_[1]->{chars};
+    $debug    = $_[1]->{debug} if defined $_[1]->{debug};
     $name     = $_[1]->{label} if defined $_[1]->{label};
+    $start    = $_[1]->{time}  if defined $_[1]->{time};
     $raw_skin = 'flat' if lc($_[1]->{skin}) eq 'flat';
 
   } elsif ( defined $_[1] and length $_[1] ) {
@@ -177,6 +196,19 @@ sub new {
   }
 
   $name =~ s/[\r\n]//g;
+
+  ## basic settings
+
+  our $width = $self->_width_init; # Terminal width
+
+  our $last  = $start;          # last update time
+
+  our $count    = 0;               # full count
+  our $interval = 100;             # how often to update the terminal
+
+  our $marker = 0; # starting position
+  our $skip   = $width - 19;                     # The area for the chars
+  our $ants   = [ map { ' '; } ( 1 .. $skip ) ]; # characters to display
 
   ## bootstrap
 
@@ -308,7 +340,7 @@ sub _commaify {
 
 sub _debug {
   my $self = shift @_;
-  return unless $self->{debug};
+  return unless our $debug > 0;
   print STDERR join( ' ', 'DEBUG:', @_ ) . "\n";
 }
 
