@@ -139,17 +139,15 @@ way, it is not informative. Remember to keep your label strings short.
 
 =head1 AUTHORSHIP:
 
-    Term::Activity v1.06 2004/09/10
+    Term::Activity vv1.11 2012/03/04
 
-    (c) 2003-2004, Phillip Pollard <bennie@cpan.org>
+    (c) 2003-2012, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
 
     Additional contributions by Kristina Davis <krd@menagerie.tf>
 
     Derived from Util::Status 1.12 2003/09/08
     With permission granted from Health Market Science, Inc.
-
-    Internal Crescendo RCS tag: $Revision: 1.9 $
 
 =head1 SEE ALSO:
 
@@ -165,7 +163,7 @@ use 5.6.0;
 use strict;
 use warnings;
 
-our $VERSION = '1.06';
+$Term::Activity::VERSION='v1.11';
 
 sub new {
   my $class = $_[0];
@@ -187,7 +185,7 @@ sub new {
     $debug    = $_[1]->{debug} if defined $_[1]->{debug};
     $name     = $_[1]->{label} if defined $_[1]->{label};
     $start    = $_[1]->{time}  if defined $_[1]->{time};
-    $raw_skin = 'flat' if lc($_[1]->{skin}) eq 'flat';
+    $raw_skin = 'flat' if defined $_[1]->{skin} and lc($_[1]->{skin}) eq 'flat';
 
   } elsif ( defined $_[1] and length $_[1] ) {
 
