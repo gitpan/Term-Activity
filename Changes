@@ -1,6 +1,11 @@
 Revision history for Perl extension Term::Activity.
 
-v1.11  2012/03/04
+1.12  2013/05/17  (Build: 1)
+
+	Updaing core SCM to git.
+	Version now generated on release.
+
+1.11  2012/03/04
 
 	Tests updated to be compatible with perl 5.15. 
 	(Swapped to Test::Simple to avoid using future bareword "plan")

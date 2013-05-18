@@ -139,9 +139,9 @@ way, it is not informative. Remember to keep your label strings short.
 
 =head1 AUTHORSHIP:
 
-    Term::Activity vv1.11 2012/03/04
+    Term::Activity v1.12 2013/05/17
 
-    (c) 2003-2012, Phillip Pollard <bennie@cpan.org>
+    (c) 2003-2013, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
 
     Additional contributions by Kristina Davis <krd@menagerie.tf>
@@ -163,7 +163,7 @@ use 5.6.0;
 use strict;
 use warnings;
 
-$Term::Activity::VERSION='v1.11';
+$Term::Activity::VERSION='1.12';
 
 sub new {
   my $class = $_[0];
