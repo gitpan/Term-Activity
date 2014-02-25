@@ -1,6 +1,11 @@
 Revision history for Perl extension Term::Activity.
 
-1.14  2014/02/19  (Build: 0)
+1.15  2014/02/24
+
+	Updated meta information
+	Added LICENSE file to distribution
+
+1.14  2014/02/19
 
 	Updaing core SCM to git.
 	Version numbers are now generated on release, not commits.
