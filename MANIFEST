@@ -8,4 +8,5 @@ t/01-load.t
 t/02-skins.t
 t/03-debug.t
 t/04-time.t
-META.yml
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
