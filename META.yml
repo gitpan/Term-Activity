@@ -21,10 +21,12 @@ no_index:
 provides:
   Term::Activity:
     file: lib/Term/Activity.pm
-    version: 1.16
+    version: 1.17
 requires:
   Term::Size: 0
+  Test::Simple: 0
+  perl: 5.006001
 resources:
   bugtracker: https://rt.cpan.org/Dist/Display.html?Name=Term-Activity
   repository: git://github.com/bennie/perl-Term-Activity.git
-version: 1.16
+version: 1.17

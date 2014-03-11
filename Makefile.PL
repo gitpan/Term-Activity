@@ -5,10 +5,11 @@ WriteMakefile(
   AUTHOR   => 'Phil Pollard <bennie@cpan.org>',
   LICENSE  => 'artistic_2',
   NAME     => 'Term::Activity',
-  VERSION  => '1.16',
+  VERSION  => '1.17',
 
   PREREQ_PM => {
-          'Term::Size' => '0'
+          'Term::Size' => '0',
+          'Test::Simple' => 0
         },
 
   ( $ExtUtils::MakeMaker::VERSION < 6.46
@@ -16,14 +17,16 @@ WriteMakefile(
         : ( META_MERGE => {
                 'meta-spec' => { version => 2 },
                 no_index => {directory => [qw/t/]},
-                provides => {
-                     'Term::Activity' => {
-                          file    => 'lib/Term/Activity.pm',
-                          version => '1.16'
-                     }
-                },
+                provides => 
+
+	{
+          'Term::Activity' => {
+                                'version' => '1.17',
+                                'file' => 'lib/Term/Activity.pm'
+                              }
+        },
+
                 release_status => 'stable',
-                requires  => {perl => '5.006'},
                 resources => {
                     repository => {
                         type => 'git',
@@ -37,6 +40,11 @@ WriteMakefile(
                 },
             },
         )
-    )
+    ),
+
+  ( $ExtUtils::MakeMaker::VERSION < 6.48
+        ? ()
+        : ( MIN_PERL_VERSION => '5.006001' )
+  )
 
 );

@@ -173,7 +173,7 @@ way, it is not informative. Remember to keep your label strings short.
 
 =head1 VERSION
 
-	Term::Activity v1.16 2014/03/03
+	Term::Activity v1.17 2014/03/11
 
 =head1 COPYRIGHT
 
@@ -206,7 +206,7 @@ use 5.6.0;
 use strict;
 use warnings;
 
-$Term::Activity::VERSION='1.16';
+$Term::Activity::VERSION='1.17';
 
 sub new {
   my $class = $_[0];
