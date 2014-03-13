@@ -34,6 +34,7 @@
       "runtime" : {
          "requires" : {
             "Term::Size" : "0",
+            "Test::More" : "0",
             "Test::Simple" : "0",
             "perl" : "5.006001"
          }
@@ -42,7 +43,7 @@
    "provides" : {
       "Term::Activity" : {
          "file" : "lib/Term/Activity.pm",
-         "version" : "1.17"
+         "version" : "1.18"
       }
    },
    "release_status" : "stable",
@@ -56,5 +57,5 @@
          "web" : "http://github.com/bennie/perl-Term-Activity"
       }
    },
-   "version" : "1.17"
+   "version" : "1.18"
 }

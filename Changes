@@ -1,5 +1,9 @@
 Revision history for Perl extension Term::Activity.
 
+1.18  2014/03/13
+
+	Correcting a typo in the MANIFEST
+
 1.17  2014/03/11
 
 	Adding a POD test
