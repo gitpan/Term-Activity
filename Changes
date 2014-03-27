@@ -1,5 +1,9 @@
 Revision history for Perl extension Term::Activity.
 
+1.19  2014/03/27
+
+	Adding missing RT information to Changes
+
 1.18  2014/03/13
 
 	Correcting a typo in the MANIFEST
@@ -21,8 +25,9 @@ Revision history for Perl extension Term::Activity.
 
 	Updaing core SCM to git.
 	Version numbers are now generated on release, not commits.
-	Added "interval" and "count" to options.
+	Added "interval" and "count" to options. (RT #18223)
 	Added "Term::Size" as a prereq
+	META.yml now with correct version. (RT #76201)
 	
 1.11  2012/03/04
 

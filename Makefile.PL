@@ -5,7 +5,7 @@ WriteMakefile(
   AUTHOR   => 'Phil Pollard <bennie@cpan.org>',
   LICENSE  => 'artistic_2',
   NAME     => 'Term::Activity',
-  VERSION  => '1.18',
+  VERSION  => '1.19',
 
   PREREQ_PM => {
           'Test::More' => 0,
@@ -22,7 +22,7 @@ WriteMakefile(
 
 	{
           'Term::Activity' => {
-                                'version' => '1.18',
+                                'version' => '1.19',
                                 'file' => 'lib/Term/Activity.pm'
                               }
         },
