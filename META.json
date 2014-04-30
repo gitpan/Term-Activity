@@ -4,7 +4,7 @@
       "Phil Pollard <bennie@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.92, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.96, CPAN::Meta::Converter version 2.120630",
    "license" : [
       "artistic_2"
    ],
@@ -36,14 +36,14 @@
             "Term::Size" : "0",
             "Test::More" : "0",
             "Test::Simple" : "0",
-            "perl" : "5.006001"
+            "perl" : "5.006000"
          }
       }
    },
    "provides" : {
       "Term::Activity" : {
          "file" : "lib/Term/Activity.pm",
-         "version" : "1.19"
+         "version" : "1.20"
       }
    },
    "release_status" : "stable",
@@ -57,5 +57,5 @@
          "web" : "http://github.com/bennie/perl-Term-Activity"
       }
    },
-   "version" : "1.19"
+   "version" : "1.20"
 }

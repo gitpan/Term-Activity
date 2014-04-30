@@ -1,5 +1,5 @@
 
-         Term::Activity - Process Activity Display Module - v1.19
+         Term::Activity - Process Activity Display Module - v1.20
 
 ================================================================================
 SYNOPSIS:
@@ -70,7 +70,7 @@ way, it is not informative. Remember to keep your label strings short.
 AUTHORSHIP:
 ================================================================================
 
-    Term::Activity v1.19 2014/03/27
+    Term::Activity v1.20 2014/04/30
 
     (c) 2003-2014, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License

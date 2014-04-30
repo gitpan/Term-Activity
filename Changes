@@ -1,5 +1,10 @@
 Revision history for Perl extension Term::Activity.
 
+1.20  2014/04/30
+
+	Using GNU TAR now. The previous release had PAX headers in the tar file.
+	Build scripts now automatically configure minium perl version.
+
 1.19  2014/03/27
 
 	Adding missing RT information to Changes

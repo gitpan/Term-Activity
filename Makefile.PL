@@ -5,7 +5,7 @@ WriteMakefile(
   AUTHOR   => 'Phil Pollard <bennie@cpan.org>',
   LICENSE  => 'artistic_2',
   NAME     => 'Term::Activity',
-  VERSION  => '1.19',
+  VERSION  => '1.20',
 
   PREREQ_PM => {
           'Test::More' => 0,
@@ -22,7 +22,7 @@ WriteMakefile(
 
 	{
           'Term::Activity' => {
-                                'version' => '1.19',
+                                'version' => '1.20',
                                 'file' => 'lib/Term/Activity.pm'
                               }
         },
@@ -45,7 +45,7 @@ WriteMakefile(
 
   ( $ExtUtils::MakeMaker::VERSION < 6.48
         ? ()
-        : ( MIN_PERL_VERSION => '5.006001' )
+        : ( MIN_PERL_VERSION => '5.6.0' )
   )
 
 );
